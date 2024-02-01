@@ -1,0 +1,70 @@
+@charset "utf-8";
+
+@font-face {
+    font-family: "Sansation";
+    src: url(./Fonts/Sansation/Sansation-Light.ttf) format(truetype);
+    font-weight: lighter;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Sansation";
+    src: url(./Fonts/Sansation/Sansation-LightItalic.ttf) format(truetype);
+    font-weight: lighter;
+    font-style: italic;
+}
+@font-face {
+    font-family: "Sansation";
+    src: url(./Fonts/Sansation/Sansation-Regular.ttf) format(truetype);
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Sansation";
+    src: url(./Fonts/Sansation/Sansation-Italic.ttf) format(truetype);
+    font-weight: normal;
+    font-style: italic;
+}
+@font-face {
+    font-family: "Sansation";
+    src: url(./Fonts/Sansation/Sansation-Bold.ttf) format(truetype);
+    font-weight: bold;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Sansation";
+    src: url(./Fonts/Sansation/Sansation-BoldItalic.ttf) format(truetype);
+    font-weight: bold;
+    font-style: italic;
+}
+
+.grid-container {
+    width: 10%;
+    display: grid;
+    text-align: center;
+    padding: 2px;
+    color: aqua;
+    background-color: aliceblue;
+}
+.grid-header {
+    padding: 10px;
+    border: 1px solid black;
+    background-color: darkcyan;
+    font-weight: bold;
+}
+.grid-item {
+    padding: 10px;
+    border: 1px solid black;
+}
+
+* {
+    color: aliceblue;
+    font-family: "Sansation";
+    background-color: #002824;
+}
+
+header {
+    /* min-height: 64px; */
+    background-color: #001612;
+    font-size: 32px;
+    padding: 16px;
+}

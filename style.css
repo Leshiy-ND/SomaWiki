@@ -38,7 +38,7 @@
 }
 
 .grid-container {
-    width: 10%;
+    width: 20vw;
     display: grid;
     text-align: center;
     padding: 2px;
@@ -98,8 +98,8 @@
 
 a {
     font-size: inherit;
-    color: inherit;
     text-decoration: inherit;
+    color:turquoise;
 }
 
 header {

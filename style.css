@@ -54,17 +54,87 @@
 .grid-item {
     padding: 10px;
     border: 1px solid black;
+    background-color: darkslategray;
+    cursor: pointer;
+    transition-duration: 0.4s;
+}
+.grid-item:hover {
+    background-color: black;
+}
+
+.info-table-container {
+    width: 30vw;
+    display: grid;
+    grid-template-columns: 30% 70%;
+    margin: 4px;
+    background-color: darkslategrey;
+}
+.info-table-item {
+    padding: 8px;
+    color: aliceblue;
+    border: 1px solid black;
 }
 
 * {
-    color: aliceblue;
+    min-width: 0;
+    margin: 0;
+    padding: 0;
+    /* color: powderblue; */
+    color: hsl(170, 80%, 90%);
     font-family: "Sansation";
-    background-color: #002824;
+    font-size: 2vh;
+}
+
+:root {
+    padding-left:  10vw;
+    padding-right: 10vw;
+    background-image: linear-gradient(
+        hsl(150, 50%, 5%),
+        hsl(150, 45%, 8%),
+        hsl(150, 50%, 5%)
+    );
+    height: 50vh;
+}
+
+a {
+    font-size: inherit;
+    color: inherit;
+    text-decoration: inherit;
 }
 
 header {
     /* min-height: 64px; */
-    background-color: #001612;
-    font-size: 32px;
-    padding: 16px;
+    color: aliceblue;
+    background-color: hsl(170, 30%, 30%);
+    font-size: 4vh;
+    padding: 2vh;
+}
+footer {
+    min-height: 2vw;
+    color: aliceblue;
+    padding: 2vh;
+    margin-top: 8vh;
+    margin-bottom: 1vh;
+    background-color: hsl(170, 30%, 5%);
+}
+
+h1 {
+    margin-top: 5vh;
+    margin-bottom: 1vh;
+    color: aliceblue;
+    font-size: 4vh;
+}
+h2 {
+    margin-top: 5vh;
+    margin-bottom: 1vh;
+    color: aliceblue;
+    font-size: 3.5vh;
+}
+p {
+    margin-bottom: 3vh;
+    line-height: 3vh;
+}
+sup {
+    font-size: 1.5vh;
+    color: aliceblue;
 }

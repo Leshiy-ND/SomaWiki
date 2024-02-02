@@ -146,6 +146,9 @@ small {
     * {
         font-size: 3vw;
     }
+    .grid-container {
+        width: 100%;
+    }
     .info-table-container {
         width: 100%;
     }

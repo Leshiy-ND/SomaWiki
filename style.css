@@ -38,7 +38,7 @@
 }
 
 .grid-container {
-    width: 20vw;
+    /* width: 20vw; */
     display: grid;
     text-align: center;
     padding: 2px;

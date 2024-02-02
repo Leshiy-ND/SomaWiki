@@ -63,14 +63,14 @@
 }
 
 .info-table-container {
-    width: 30vw;
+    width: 64vh;
     display: grid;
     grid-template-columns: 30% 70%;
-    margin: 4px;
+    margin: 0.5vh;
     background-color: darkslategrey;
 }
 .info-table-item {
-    padding: 8px;
+    padding: 1vh;
     color: aliceblue;
     border: 1px solid black;
 }
@@ -79,10 +79,10 @@
     min-width: 0;
     margin: 0;
     padding: 0;
-    /* color: powderblue; */
     color: hsl(170, 80%, 90%);
     font-family: "Sansation";
     font-size: 2vh;
+    transition-duration: 0.4s;
 }
 
 :root {
@@ -137,4 +137,23 @@ p {
 sup {
     font-size: 1.5vh;
     color: aliceblue;
+}
+small {
+    font-size: 1.5vh;
+}
+
+@media (orientation: portrait) {
+    * {
+        font-size: 3vw;
+    }
+    .info-table-container {
+        width: 100%;
+    }
+    sup {
+        font-size: 2.25vw;
+        color: aliceblue;
+    }
+    small {
+        font-size: 2.25vw;
+    }
 }

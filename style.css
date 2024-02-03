@@ -64,24 +64,29 @@
 
 .itab-container {
     width: 64vh;
-    /* width: fit-content; */
     display: grid;
-    margin: 0.5vh;
-    background-color: darkslategrey;
+    margin-top:    1vh;
+    margin-bottom: 1vh;
 }
+.itab-container:hover {
+    color: white;
+}   
 .itab-header {
-    grid-template-columns: 30% 70%;
-    align-items: center;
-    border: 1px solid black;
     padding: 1vh;
+    font-size: 1.5em;
+    font-weight: bold;
+    text-align: center;
+    background-color: darkcyan;
+    border: 1px solid black;
 }
 .itab-line {
     display: grid;
     grid-template-columns: 30% 70%;
     align-items: center;
-    border: 1px solid black;
     padding: 1vh;
     color: aliceblue;
+    background-color: darkslategrey;
+    border: 1px solid black;
 }
 .itab-line:hover {
     background-color: hsl(160, 30%, 20%);

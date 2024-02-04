@@ -83,10 +83,12 @@
     display: grid;
     grid-template-columns: 30% 70%;
     align-items: center;
-    padding: 1vh;
     color: aliceblue;
     background-color: darkslategrey;
     border: 1px solid black;
+}
+.itab-line div {
+    padding: 1vh;
 }
 .itab-line:hover {
     background-color: hsl(160, 30%, 20%);
@@ -126,6 +128,8 @@ a {
 
 header {
     /* min-height: 64px; */
+    display: flex;
+    justify-content: space-between;
     color: aliceblue;
     background-color: hsl(170, 30%, 30%);
     font-size: 4vh;

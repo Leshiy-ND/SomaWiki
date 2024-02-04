@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
     var language;
     switch (currentPageUrl.substring(currentPageUrl.lastIndexOf("/")))
     {
-        case "/ru.html": language = Lang.RU; break;
+        case "/ru": language = Lang.RU; break;
         default:         language = Lang.EN;
     }
     
@@ -19,12 +19,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
     switch (language) {
         case Lang.RU:
-            home.href = path_home + "/home/ru.html";
-            translate.href = "./en.html";
+            home.href = path_home + "/home/ru";
+            translate.href = "./en";
             break;
         case Lang.EN:
-            home.href = path_home + "/home/en.html";
-            translate.href = "./ru.html";
+            home.href = path_home + "/home/en";
+            translate.href = "./ru";
             break;
     }
     home.textContent = 'Soma Wiki';

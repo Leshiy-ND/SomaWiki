@@ -3,10 +3,10 @@ const Lang = { EN: "en", RU: "ru" };
 document.addEventListener('DOMContentLoaded', function() {
     var currentPageUrl = window.location.href;
     var language;
-    switch (currentPageUrl.substring(currentPageUrl.lastIndexOf("/")))
+    switch (currentPageUrl.substring(currentPageUrl.lastIndexOf("/")).substring(1, 3))
     {
-        case "/ru": language = Lang.RU; break;
-        default:         language = Lang.EN;
+        case "ru": language = Lang.RU; break;
+        default:   language = Lang.EN;
     }
     
     var scripts = document.getElementsByTagName("script"), src = scripts[scripts.length-1].src;

@@ -123,7 +123,7 @@ div, b, i {
 a {
     font-size: inherit;
     text-decoration: inherit;
-    color:turquoise;
+    color:hsl(174, 80%, 60%);
 }
 
 header {

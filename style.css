@@ -161,8 +161,12 @@ p {
     line-height: 3vh;
 }
 sup {
-    font-size: 1.5vh;
+    font-size: 75%;
     color: aliceblue;
+    vertical-align: baseline;
+    position: relative;
+    line-height: 0;
+    top: -0.5em;
 }
 small {
     font-size: 1.5vh;

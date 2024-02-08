@@ -109,7 +109,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     var home      = document.createElement('a');
     var translate = document.createElement('a');
-    var showLS    = document.createElement('a');
+    var showLS    = document.createElement('div');
 
     switch (language) {
         case Lang.RU:
@@ -125,10 +125,12 @@ document.addEventListener('DOMContentLoaded', function() {
     home.style.marginRight = "auto";
 
     translate.textContent = '🌐';
+    translate.style.textDecoration = "none"
 
-    showLS.textContent    = '⚙️';
+    showLS.textContent = '⚙️';
     showLS.onclick = function() { showLocalStorage(); }
     showLS.style.cursor = "pointer"
+    showLS.style.fontSize = "inherit"
     showLS.style.marginLeft = "1vh"
 
     var header = document.getElementById('universal-header');

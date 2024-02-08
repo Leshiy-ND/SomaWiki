@@ -18,16 +18,20 @@ function cleanLocalStorage() {
 
 
 
-function updateLocalStorage() {
-    var today = new Date(); {
-        var year = today.getFullYear();
-        var month = today.getMonth() + 1;
-        var date = today.getDate();
-        if (month < 10) { month = "0" + month; }
-        if (date < 10)  { date  = "0" + date;  }
+function getToday() {
+    var today = new Date();
 
-        today = year + '/' + month + '/' + date;
-    }
+    var year  = today.getFullYear();
+    var month = today.getMonth() + 1;
+    var date  = today.getDate();
+    if (month < 10) month = "0" + month;
+    if (date < 10)  date  = "0" + date;
+
+    return year + '/' + month + '/' + date;
+}
+
+function updateLocalStorage() {
+    var today = getToday();
 
     var visits    = localStorage.getItem('SomaWiki:visits');
     var lastVisit = localStorage.getItem('SomaWiki:lastVisit');
@@ -103,9 +107,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // v v v v v v v v v v v v v v v v HEADER v v v v v v v v v v v v v v v v
 
-    var home = document.createElement('a');
+    var home      = document.createElement('a');
     var translate = document.createElement('a');
-    var showLS = document.createElement('a');
+    var showLS    = document.createElement('a');
 
     switch (language) {
         case Lang.RU:
@@ -119,8 +123,10 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     home.textContent = 'Soma Wiki';
     home.style.marginRight = "auto";
+
     translate.textContent = '🌐';
-    showLS.textContent = '⚙️';
+
+    showLS.textContent    = '⚙️';
     showLS.onclick = function() { showLocalStorage(); }
     showLS.style.cursor = "pointer"
     showLS.style.marginLeft = "1vh"
@@ -134,15 +140,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // localStorage.clear();
     {
-        var today = new Date(); {
-            var year = today.getFullYear();
-            var month = today.getMonth() + 1;
-            var date = today.getDate();
-            if (month < 10) { month = "0" + month; }
-            if (date < 10)  { date  = "0" + date;  }
-
-            today = year + '/' + month + '/' + date;
-        }
+        var today = getToday();
 
         var visits    = localStorage.getItem('SomaWiki:visits');
         var lastVisit = localStorage.getItem('SomaWiki:lastVisit');

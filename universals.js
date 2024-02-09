@@ -10,10 +10,11 @@ function closeLocalStorage() {
     document.getElementById("popup-local-storage-holder").style.display = "none";
 }
 function cleanLocalStorage() {
-    localStorage.removeItem("SomaWiki:visitFirst");
-    localStorage.removeItem("SomaWiki:visitLast");
-    localStorage.removeItem("SomaWiki:visits");
-    localStorage.removeItem("SomaWiki:warning");
+    localStorage.removeItem( "SomaWiki:visitFirst" );
+    localStorage.removeItem( "SomaWiki:visitPrev"  );
+    localStorage.removeItem( "SomaWiki:visitLast"  );
+    localStorage.removeItem( "SomaWiki:visits"     );
+    localStorage.removeItem( "SomaWiki:warning"    );
     updateLocalStorage();
 }
 

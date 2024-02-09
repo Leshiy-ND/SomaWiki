@@ -86,10 +86,11 @@ function updateLocalStorage() {
                                 <b>` + textVisits  + `</b>: ` + visits     + `<br/>
                                 <b>` + textWarning + `</b>: ` + warning    + `
                             </p>`;
-    var buttonClose = document.createElement("div");
-    buttonClose.className = "button-close";
+
+    var buttonClose         = document.createElement("div");
     buttonClose.textContent = "❌";
-    buttonClose.onclick = function() { closeLocalStorage() };
+    buttonClose.className   = "button-close";
+    buttonClose.onclick     = function() { closeLocalStorage() };
     lsPanel.appendChild(buttonClose);
 
     var buttonClean = document.createElement("div");
@@ -130,24 +131,24 @@ document.addEventListener('DOMContentLoaded', function() {
     switch (language) {
         case Lang.RU:
             home.href = path_home + "/home/ru";
-            translate.href = "./en";
+            translate.href =            "./en";
             break;
         case Lang.EN:
             home.href = path_home + "/home/en";
-            translate.href = "./ru";
+            translate.href =            "./ru";
             break;  
     }
-    home.textContent = 'Soma Wiki';
+    home.textContent       = 'Soma Wiki';
     home.style.marginRight = "auto";
 
-    translate.textContent = '🌐';
+    translate.textContent          = '🌐';
     translate.style.textDecoration = "none"
 
-    showLS.textContent = '⚙️';
-    showLS.onclick = function() { showLocalStorage(); }
-    showLS.style.cursor = "pointer"
-    showLS.style.fontSize = "inherit"
+    showLS.textContent      = '⚙️';
+    showLS.style.cursor     = "pointer"
+    showLS.style.fontSize   = "inherit"
     showLS.style.marginLeft = "1vh"
+    showLS.onclick = function() { showLocalStorage(); }
 
     var header = document.getElementById('universal-header');
     header.appendChild(home);
@@ -186,14 +187,14 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
 
-        var lsHolder = document.createElement('div');
+        var lsHolder       = document.createElement('div');
         lsHolder.className = "popup-holder";
-        lsHolder.id = "popup-local-storage-holder";
+        lsHolder.id        = "popup-local-storage-holder";
         header.appendChild(lsHolder);
 
-        var lsPanel = document.createElement('div');
+        var lsPanel       = document.createElement('div');
         lsPanel.className = "popup-panel";
-        lsPanel.id = "popup-local-storage-panel";
+        lsPanel.id        = "popup-local-storage-panel";
         lsHolder.appendChild(lsPanel);
 
         updateLocalStorage();
@@ -210,7 +211,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 Все персонажи и прочее принадлежат Frictional Games. <br />
                 <br />
                 Купите и поиграйте в <a href="https://store.steampowered.com/app/282140/SOMA/">Soma</a>.`;
-            break;
+           
         case Lang.EN:
             footer.innerHTML = 
                 `The whole "site" - work of lonely fan. <br />

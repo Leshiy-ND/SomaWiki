@@ -10,8 +10,9 @@ function closeLocalStorage() {
     document.getElementById("popup-local-storage-holder").style.display = "none";
 }
 function cleanLocalStorage() {
+    localStorage.removeItem("SomaWiki:visitFirst");
+    localStorage.removeItem("SomaWiki:visitLast");
     localStorage.removeItem("SomaWiki:visits");
-    localStorage.removeItem("SomaWiki:lastVisit");
     localStorage.removeItem("SomaWiki:warning");
     updateLocalStorage();
 }
@@ -33,42 +34,56 @@ function getToday() {
 function updateLocalStorage() {
     var today = getToday();
 
-    var visits    = localStorage.getItem('SomaWiki:visits');
-    var lastVisit = localStorage.getItem('SomaWiki:lastVisit');
-    var warning   = localStorage.getItem('SomaWiki:warning');
+    var visitFirst = localStorage.getItem( "SomaWiki:visitFirst" );
+    var visitPrev  = localStorage.getItem( "SomaWiki:visitPrev"  );
+    var visitLast  = localStorage.getItem( "SomaWiki:visitLast"  );
+    var visits     = localStorage.getItem( "SomaWiki:visits"     );
+    var warning    = localStorage.getItem( "SomaWiki:warning"    );
+
+    var textToday, textYes, textNo;
     switch (language) {
         case Lang.RU:
-            if (lastVisit == today) { lastVisit = "сегодня :)" }
-            if (warning == 'n') { warning = "нет" } else { warning = "да" }
+            textToday = "сегодня";
+            textYes   = "да";
+            textNo    = "нет";
             break;
         case Lang.EN:
-            if (lastVisit == today) { lastVisit = "today :)" }
-            if (warning == 'n') { warning = "no" } else { warning = "yes" }
+            textToday = "today";
+            textYes   = "yes";
+            textNo    = "no";
             break;  
     }
+    if (visitFirst == today) {
+        visitFirst = textToday + " :)";
+        visitPrev = "-"
+    }
+    warning = (warning == 'n') ? textNo : textYes;
 
     var lsPanel = document.getElementById("popup-local-storage-panel");
 
-    var textLS, textVisits, textLast;
+    var textLS, textFirst, textPrev, textVisits, textWarning;
     switch (language) {
         case Lang.RU:
             textLS      = "ЛОКАЛЬНОЕ ХРАНИЛИЩЕ";
+            textFirst   = "Первый визит";
+            textPrev    = "Прошлый визит";
             textVisits  = "Посещений";
-            textLast    = "Последний визит";
             textWarning = "Предупреждение о спойлерах";
             break;
         case Lang.EN:
             textLS      = "LOCAL STORAGE";
+            textFirst   = "First visit";
+            textPrev    = "Previous visit";
             textVisits  = "Visits";
-            textLast    = "Last visit";
             textWarning = "Spoiler warning";
             break;  
     }
     lsPanel.innerHTML =    `<h2 style="text-align: center; margin-top: 0">` + textLS + `</h2>
                             <p>
-                                <b>` + textVisits  + `</b>: ` + visits    + `<br/>
-                                <b>` + textLast    + `</b>: ` + lastVisit + `<br/>
-                                <b>` + textWarning + `</b>: ` + warning   + `
+                                <b>` + textFirst   + `</b>: ` + visitFirst + `<br/>
+                                <b>` + textPrev    + `</b>: ` + visitPrev  + `<br/>
+                                <b>` + textVisits  + `</b>: ` + visits     + `<br/>
+                                <b>` + textWarning + `</b>: ` + warning    + `
                             </p>`;
     var buttonClose = document.createElement("div");
     buttonClose.className = "button-close";
@@ -77,7 +92,7 @@ function updateLocalStorage() {
     lsPanel.appendChild(buttonClose);
 
     var buttonClean = document.createElement("div");
-    if (lastVisit) buttonClean.className = "button-text";
+    if (visitLast) buttonClean.className = "button-text";
     else           buttonClean.className = "button-text-disabled";
     switch (language) {
         case Lang.RU:
@@ -141,17 +156,33 @@ document.addEventListener('DOMContentLoaded', function() {
     // v v v v v v v v v v v v v v v v LOCAL STORAGE v v v v v v v v v v v v v v v v
 
     // localStorage.clear();
+    var shouldShowWarning;
     {
         var today = getToday();
 
-        var visits    = localStorage.getItem('SomaWiki:visits');
-        var lastVisit = localStorage.getItem('SomaWiki:lastVisit');
-        if (!lastVisit) {
-            localStorage.setItem('SomaWiki:visits', 1);
-            localStorage.setItem('SomaWiki:lastVisit', today);
-            localStorage.setItem('SomaWiki:warning', 'y');
+        var visitFirst = localStorage.getItem("SomaWiki:visitFirst");
+
+        if (!visitFirst) /* if there's no record of fisrt visit / if this one is the first */ {
+            localStorage.setItem( "SomaWiki:visitFirst", today );
+            localStorage.setItem( "SomaWiki:visitPrev",  today );
+            localStorage.setItem( "SomaWiki:visitLast",  today );
+            localStorage.setItem( "SomaWiki:visits",     1     );
+            localStorage.setItem( "SomaWiki:warning",    'y'   );
+            shouldShowWarning = true;
         } else {
-            localStorage.setItem('SomaWiki:visits', parseInt(visits) + 1);
+            var visitLast = localStorage.getItem("SomaWiki:visitLast")
+
+            if (visitLast == today) {
+                shouldShowWarning = false;
+            } else {
+                var visits  = localStorage.getItem( "SomaWiki:visits"  );
+                var warning = localStorage.getItem( "SomaWiki:warning" );
+                shouldShowWarning = (warning == 'y');
+
+                localStorage.setItem( "SomaWiki:visits",    parseInt(visits) + 1 );
+                localStorage.setItem( "SomaWiki:visitPrev", visitLast            );
+                localStorage.setItem( "SomaWiki:visitLast", today                );
+            }
         }
 
         var lsHolder = document.createElement('div');

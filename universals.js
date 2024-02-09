@@ -206,18 +206,18 @@ document.addEventListener('DOMContentLoaded', function() {
     switch (language) {
         case Lang.RU:
             footer.innerHTML = 
-                `Весь "сайт" - работа фаната. <br />
-                <br />
-                Все персонажи и прочее принадлежат Frictional Games. <br />
-                <br />
+                `Весь "сайт" - работа фаната. <br/>
+                <br/>
+                Все персонажи и прочее принадлежат Frictional Games. <br/>
+                <br/>
                 Купите и поиграйте в <a href="https://store.steampowered.com/app/282140/SOMA/">Soma</a>.`;
            
         case Lang.EN:
             footer.innerHTML = 
-                `The whole "site" - work of lonely fan. <br />
-                <br />
-                All character and other stuff belongs to Frictional Games. <br />
-                <br />
+                `The whole "site" - work of lonely fan. <br/>
+                <br/>
+                All character and other stuff belongs to Frictional Games. <br/>
+                <br/>
                 Go buy and play <a href="https://store.steampowered.com/app/282140/SOMA/">Soma</a>.`;
             break;
     }

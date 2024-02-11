@@ -113,11 +113,17 @@ div, b, i {
     padding-left:  10vw;
     padding-right: 10vw;
     background-image: linear-gradient(
+        90deg,
         hsl(210, 50%, 5%),
-        hsl(180, 45%, 6%),
+        hsl(190, 45%, 6%),
+        hsl(210, 50%, 5%),
+        hsl(190, 45%, 6%),
+        hsl(210, 50%, 5%),
+        hsl(190, 45%, 6%),
+        hsl(210, 50%, 5%),
+        hsl(190, 45%, 6%),
         hsl(210, 50%, 5%)
     );
-    height: 50vh;
 }
 
 a {
@@ -145,8 +151,7 @@ footer {
     color: aliceblue;
     padding: 2vh;
     margin-top: 8vh;
-    margin-bottom: 1vh;
-    background-color: hsl(170, 30%, 5%);
+    background-color: rgba(0, 0, 0, 70%);
 }
 
 h1 {
@@ -208,7 +213,7 @@ small {
     top: 0;
     width:  100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 70%);
+    background-color: rgba(0, 0, 0, 90%);
 }
 
 .popup-panel {

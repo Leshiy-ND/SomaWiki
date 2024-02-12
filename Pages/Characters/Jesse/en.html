@@ -26,12 +26,41 @@
             Worked for some time at <i>Grimoire</i>. Having memory problems, forgot about his colleague, <a href="../Simon_Jarett/en">Simon Jarrett's</a> day off, scheduled for Saturday, May 2, 2015. Recalling some of that, left a message on Simon's answering machine asking him to send a letter or make a call with an explanation<sup>[2]</sup>.
         </p>
         <p>
-            Receiving email from Simon / not finding Simon at work<sup>[0]</sup> on the morning of said day, he called him at 10:12, wished him good luck and promised a free lunch, in case of not receiving any mail. At the same morning received help in the store with something from <a href="../Chris/en">Chris</a> and <a href="../Matt/en">the "new minion"</a><sup>[2]</sup>.
+            <div class="choise-holder" story-choise="email">
+                <div story-option=""     > Email                       </div>
+                <div story-option="send" > Simon did send the email    </div>
+                <div story-option="not"  > Simon did sendn't the email </div>
+            </div>
+            <div class="choise-holder" story-choise="call"> 
+                <div story-option=""        > Phone call              </div>
+                <div story-option="answer"  > Simon answered the call </div>
+                <div story-option="hung-up" > Simon dropped the call  </div>
+                <div story-option="ignore"  > Simon ignored the call  </div>
+            </div>
+            <p>
+                <span story-consequence="email">
+                    <span story-result=""     > {Email}                    </span>
+                    <span story-result="send" > Receiving email from Simon </span>
+                    <span story-result="not"  > Not finding Simon at work  </span>
+                </span>
+                on the morning of said day, Jesse called him at 10:12,
+                <span story-consequence="call">
+                    <span story-result=""        > {Phone call}.             </span>
+                    <span story-result="hung-up" > but the call was dropped. </span>
+                    <span story-result="ignore"  > but no one picked up.     </span>
+                    <span story-result="answer"  > told him about
+                        <span story-consequence="email">
+                            <span story-result=""     > {Email}.                                                                     </span>
+                            <span story-result="send" > coming in full time Matt and wished him good luck.                           </span>
+                            <span story-result="not"  > a new guy at work, wished good luck and promised a free lunch as an apology. </span>
+                        </span>
+                    </span>
+                </span>
+                At the same morning received help in the store with something from <a href="../Chris/en">Chris</a> and <a href="../Matt/en">Matt</a><sup>[2]</sup>.
         </p>
         
         <h2>Sources</h2>
         <p>
-            0. Player's choice and/or its consequences. <br />
             1. <b>Simon's apartment</b>: Message on answering machine. <br />
             2. <b>Subway</b>: Jesse's phonecall to Simon.
         </p>

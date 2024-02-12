@@ -167,6 +167,7 @@ h2 {
     font-size: 3.5vh;
 }
 p {
+    margin-top:    1vh;
     margin-bottom: 3vh;
     line-height: 150%;
 }
@@ -180,6 +181,9 @@ sup {
 }
 small {
     font-size: 1.5vh;
+}
+span {
+    color: inherit;
 }
 
 @media (orientation: portrait) {
@@ -205,6 +209,8 @@ small {
     }
 }
 
+
+
 .popup-holder {
     display: none;  /* none <-> flex */
     position: fixed;
@@ -226,12 +232,68 @@ small {
     border: 2px solid cyan;
 }
 
+
+
+button {
+    color: black;
+    padding: 8px;
+}
+
+
+
+.choise-holder {
+    display:   flex;
+    flex-wrap: wrap;
+    gap:     8px;
+    padding: 1vh;
+}
+
+.choise-holder :first-child {
+    border-top-left-radius: 20px;
+    padding-left:           10px;
+    color: hsl(0, 0%, 90%);
+    background-color: rgba(64, 64, 64, 70%);
+    border-color: hsl(0, 0%, 68%);
+}
+.choise-holder :first-child:hover {
+    background-color: rgba(64, 64, 64, 70%);
+}
+.option-normal, .option-selected {
+    padding: 8px;
+    color: white;
+    border: 2px solid;
+    border-radius: 4px;
+}
+.option-normal {
+    cursor: pointer;
+    background-color: rgba(0, 64, 64, 70%);
+    border-color: darkcyan;
+}
+.option-normal:hover {
+    background-color: rgba(0, 128, 128, 70%);
+}
+.option-selected {
+    cursor: default;
+    background-color: rgba(128, 96, 0, 70%);
+    border-color: hsl(60, 100%, 32%);
+}
+
+@media (orientation: portrait) {
+    .choise-holder {
+        display: grid;
+    }
+}
+
+
+
 .button-close {
     position: absolute;
     top:   5px;
     right: 5px;
     cursor: pointer;
 }
+
+
 
 .button-text {
     padding-top:    1vh;

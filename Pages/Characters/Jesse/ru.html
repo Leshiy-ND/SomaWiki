@@ -25,13 +25,41 @@
         <p>
             Работал некоторое время в <i>"Гримуаре"</i>. Имея проблемы с памятью, забыл про отгул своего коллеги, <a href="../Simon_Jarett/ru">Саймона Джаретта</a>, назначенном на субботу 2 мая 2015 года. Припомнив что-то подобное накануне, оставил сообщение на автоответчик Саймона с просьбой отпраить письмо или позвонить с пояснением<sup>[2]</sup>.
         </p>
+        <div class="choise-holder" story-choise="email">
+            <div story-option=""     > Email                    </div>
+            <div story-option="send" > Саймон отправил email    </div>
+            <div story-option="not"  > Саймон не отправил email </div>
+        </div>
+        <div class="choise-holder" story-choise="call"> 
+            <div story-option=""        > Звонок                      </div>
+            <div story-option="answer"  > Саймон принял вызов         </div>
+            <div story-option="hung-up" > Саймон отклонил вызов       </div>
+            <div story-option="ignore"  > Саймон проигнорировал вызов </div>
+        </div>
         <p>
-            Получив письмо от Саймона / не найдя Саймона на работе<sup>[0]</sup> утром названного дня, позвонил ему в 10:12, пожелал удачи и пообещал проставиться обедом, если не получал никакого письма<sup>[0]</sup>. Тем же принимал в магазине помощь с чем-то от <a href="../Chris/ru">Крис(-а)</a> с <a href="../Matt/ru">новичком</a><sup>[2]</sup>.
+            <span story-consequence="email">
+                <span story-result=""     > {Email}                    </span>
+                <span story-result="send" > Получив письмо от Саймона  </span>
+                <span story-result="not"  > Не найдя Саймона на работе </span>
+            </span>
+            утром названного дня, Джесси позвонил ему в 10:12,
+            <span story-consequence="call">
+                <span story-result=""        > {Звонок}.              </span>
+                <span story-result="hung-up" > но звонок был сброшен. </span>
+                <span story-result="ignore"  > но никто не ответил.   </span>
+                <span story-result="answer"  > рассказал про
+                    <span story-consequence="email">
+                        <span story-result=""     > {Email}.                                                                              </span>
+                        <span story-result="send" > Мэтта, перешедшего на полную смену, и пожелал удачи.                                  </span>
+                        <span story-result="not"  > новичка на работе, пожелал удачи и пообещал проставиться обедом в качестве извинения. </span>
+                    </span>
+                </span>
+            </span>
+            Тем же утром принимал в магазине помощь с чем-то от <a href="../Chris/ru">Крис(-а)</a> с <a href="../Matt/ru">Мэттом</a><sup>[2]</sup>.
         </p>
         
         <h2>Источники</h2>
         <p>
-            0. Выбор игрока и/или его последствия. <br />
             1. <b>Квартира Саймона</b>: Сообщение на автоответчике. <br />
             2. <b>Метро</b>: Телефонный звонок Саймону от Джесси.
         </p>

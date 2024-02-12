@@ -164,18 +164,20 @@ footer {
 
 
 
-div, b, i {
-    color: inherit;
-}
-
 a {
     font-size: inherit;
     text-decoration: inherit;
+}
+.hpage {
     color:hsl(183, 92%, 55%);
 }
-a:hover {
+.hpage:hover {
     font-weight: bold;
     text-decoration: underline;
+}
+
+div, b, i {
+    color: inherit;
 }
 
 h1 {

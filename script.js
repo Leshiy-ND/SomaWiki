@@ -156,7 +156,14 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     var scripts = document.getElementsByTagName("script"), src = scripts[scripts.length-1].src;
-    var path_home = src.substring(0, src.lastIndexOf("/"));
+    var base    = document.createElement("base");
+    base.href   = src.substring(0, src.lastIndexOf("/")) + "/";
+    document.head.appendChild(base);
+
+    document.querySelectorAll("[hpage]").forEach(pageRef => {
+        pageRef.href = "Pages/" + pageRef.getAttribute("hpage") + "/" + language + ""; // Put ".html" for local use and revove before push
+        pageRef.className = "hpage";
+    });
 
     // v v v v v v v v v v v v v v v v HEADER v v v v v v v v v v v v v v v v
 
@@ -164,22 +171,21 @@ document.addEventListener('DOMContentLoaded', function() {
     var translate = document.createElement('a');
     var showLS    = document.createElement('div');
 
+    translate.href = currentPageUrl.substring(0, currentPageUrl.lastIndexOf("/"));
     switch (language) {
         case Lang.RU:
-            home.href = path_home + "/home/ru";
-            translate.href =            "./en";
+            home.href      = "home/ru"; // Put ".html" for local use and revove before push
+            translate.href +=    "/en"; // Put ".html" for local use and revove before push
             break;
         case Lang.EN:
-            home.href = path_home + "/home/en";
-            translate.href =            "./ru";
+            home.href      = "home/en"; // Put ".html" for local use and revove before push
+            translate.href +=    "/ru"; // Put ".html" for local use and revove before push
             break;  
     }
     home.textContent       = 'Soma Wiki';
     home.style.marginRight = "auto";
 
-    translate.textContent          = '🌐';
-    translate.style.textDecoration = "none"
-
+    translate.textContent   = '🌐';
     showLS.textContent      = '⚙️';
     showLS.style.cursor     = "pointer"
     showLS.style.fontSize   = "inherit"

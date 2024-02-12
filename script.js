@@ -160,6 +160,12 @@ document.addEventListener('DOMContentLoaded', function() {
     base.href   = src.substring(0, src.lastIndexOf("/")) + "/";
     document.head.appendChild(base);
 
+    var favicon  = document.createElement("link");
+    favicon.rel  = "icon";
+    favicon.type = "image/x-icon";
+    favicon.href = "src/Images/favicon.png"
+    document.head.appendChild(favicon);
+
     document.querySelectorAll("[hpage]").forEach(pageRef => {
         pageRef.href = "Pages/" + pageRef.getAttribute("hpage") + "/" + language + ""; // Put ".html" for local use and revove before push
         pageRef.className = "hpage";

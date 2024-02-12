@@ -4,37 +4,37 @@
 
 @font-face {
     font-family: "Sansation";
-    src: url(./Fonts/Sansation/Sansation-Light.ttf) format(truetype);
+    src: url(src/Fonts/Sansation/Sansation-Light.ttf) format(truetype);
     font-weight: lighter;
     font-style: normal;
 }
 @font-face {
     font-family: "Sansation";
-    src: url(./Fonts/Sansation/Sansation-LightItalic.ttf) format(truetype);
+    src: url(src/Fonts/Sansation/Sansation-LightItalic.ttf) format(truetype);
     font-weight: lighter;
     font-style: italic;
 }
 @font-face {
     font-family: "Sansation";
-    src: url(./Fonts/Sansation/Sansation-Regular.ttf) format(truetype);
+    src: url(src/Fonts/Sansation/Sansation-Regular.ttf) format(truetype);
     font-weight: normal;
     font-style: normal;
 }
 @font-face {
     font-family: "Sansation";
-    src: url(./Fonts/Sansation/Sansation-Italic.ttf) format(truetype);
+    src: url(src/Fonts/Sansation/Sansation-Italic.ttf) format(truetype);
     font-weight: normal;
     font-style: italic;
 }
 @font-face {
     font-family: "Sansation";
-    src: url(./Fonts/Sansation/Sansation-Bold.ttf) format(truetype);
+    src: url(src/Fonts/Sansation/Sansation-Bold.ttf) format(truetype);
     font-weight: bold;
     font-style: normal;
 }
 @font-face {
     font-family: "Sansation";
-    src: url(./Fonts/Sansation/Sansation-BoldItalic.ttf) format(truetype);
+    src: url(src/Fonts/Sansation/Sansation-BoldItalic.ttf) format(truetype);
     font-weight: bold;
     font-style: italic;
 }

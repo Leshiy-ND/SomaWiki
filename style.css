@@ -1,5 +1,7 @@
 @charset "utf-8";
 
+
+
 @font-face {
     font-family: "Sansation";
     src: url(./Fonts/Sansation/Sansation-Light.ttf) format(truetype);
@@ -37,8 +39,9 @@
     font-style: italic;
 }
 
+
+
 .grid-container {
-    /* width: 20vw; */
     display: grid;
     text-align: center;
     padding: 2px;
@@ -61,6 +64,8 @@
 .grid-item:hover {
     background-color: black;
 }
+
+
 
 .itab-container {
     width: 64vh;
@@ -95,9 +100,14 @@
     padding-top: 2vh;
     padding-bottom: 2vh;
 }
-div, b, i {
-    color: inherit;
+
+@media (orientation: portrait) {
+    .grid-container, .itab-container {
+        width: 100%;
+    }
 }
+
+
 
 * {
     min-width: 0;
@@ -126,19 +136,17 @@ div, b, i {
     );
 }
 
-a {
-    font-size: inherit;
-    text-decoration: inherit;
-    /* color: hsl(174, 80%, 60%); */
-    color:hsl(183, 92%, 55%);
-}
-a:hover {
-    font-weight: bold;
-    text-decoration: underline;
+@media (orientation: portrait) {
+    * {
+        font-size: 3vw;
+    }
+    :root {
+        padding-left:  6vw;
+        padding-right: 6vw;
+    }
 }
 
 header {
-    /* min-height: 64px; */
     display: flex;
     justify-content: space-between;
     color: aliceblue;
@@ -152,6 +160,22 @@ footer {
     padding: 2vh;
     margin-top: 8vh;
     background-color: rgba(0, 0, 0, 70%);
+}
+
+
+
+div, b, i {
+    color: inherit;
+}
+
+a {
+    font-size: inherit;
+    text-decoration: inherit;
+    color:hsl(183, 92%, 55%);
+}
+a:hover {
+    font-weight: bold;
+    text-decoration: underline;
 }
 
 h1 {
@@ -187,19 +211,6 @@ span {
 }
 
 @media (orientation: portrait) {
-    :root {
-        padding-left:  6vw;
-        padding-right: 6vw;
-    }
-    * {
-        font-size: 3vw;
-    }
-    .grid-container {
-        width: 100%;
-    }
-    .itab-container {
-        width: 100%;
-    }
     sup {
         font-size: 2.25vw;
         color: aliceblue;

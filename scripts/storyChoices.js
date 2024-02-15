@@ -1,5 +1,5 @@
 document.querySelectorAll("[story-consequence]").forEach(element => {
-    element.style.color = "#ffddaa";
+    element.className = "consequence-holder";
 });
 
 document.querySelectorAll("[story-result]").forEach(elemResult => {

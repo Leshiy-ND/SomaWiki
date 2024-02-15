@@ -300,6 +300,16 @@ button {
     }
 }
 
+.consequence-holder {
+    color: hsl(50, 100%, 83%);
+}
+.consequence-holder .consequence-holder {
+    color: hsl(35, 100%, 83%);
+}
+.consequence-holder .consequence-holder .consequence-holder {
+    color: hsl(10, 100%, 83%);
+}
+
 
 
 .button-close {

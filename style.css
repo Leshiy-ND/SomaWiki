@@ -41,28 +41,41 @@
 
 
 
-.grid-container {
+.pagesel-container {
     display: grid;
     text-align: center;
-    padding: 2px;
-    color: aqua;
-    background-color: aliceblue;
+    margin: 2vh;
+    transition-duration: 0s;
+    border: 2px solid antiquewhite;
 }
-.grid-header {
+.pagesel-container:hover {
+    color: white;
+}   
+.pagesel-header {
+    font-size: 1.5em;
     padding: 10px;
     border: 1px solid black;
     background-color: darkcyan;
     font-weight: bold;
 }
-.grid-item {
+.pagesel-items {
+    display: grid;
+    grid-template-columns: 33.3% 33.3% 33.3%;
+}
+.pagesel-items a {
     padding: 10px;
     border: 1px solid black;
     background-color: darkslategray;
-    cursor: pointer;
-    transition-duration: 0.4s;
 }
-.grid-item:hover {
-    background-color: black;
+.pagesel-items a:hover {
+    text-decoration: none;
+    background-color: hsl(180, 25%, 15%);
+}
+
+@media (orientation: portrait) {
+    .pagesel-items {
+        grid-template-columns: 50% 50%;
+    }
 }
 
 
@@ -72,6 +85,7 @@
     display: grid;
     margin-top:    1vh;
     margin-bottom: 1vh;
+    transition-duration: 0s;
 }
 .itab-container:hover {
     color: white;
@@ -102,7 +116,7 @@
 }
 
 @media (orientation: portrait) {
-    .grid-container, .itab-container {
+    .itab-container {
         width: 100%;
     }
 }

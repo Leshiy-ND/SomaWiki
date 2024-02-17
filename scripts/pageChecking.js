@@ -3,10 +3,19 @@ var existentPages = [
         "name": "Places",
         "folders": [
             {
-                "name": "Simons_Apartment",
-                "folders": []
+                "name": "Toronto_Simons_Apartment",
+                "folders": [],
+                "files": [
+                    "en.html"
+                ]
+            },
+            {
+                "name": "Toronto_Grimoire",
+                "folders": [],
+                "files": []
             }
-        ]
+        ],
+        "files": []
     },
     {
         "name": "Characters",
@@ -139,7 +148,8 @@ var existentPages = [
                     "ru.html"
                 ]
             }
-        ]
+        ],
+        "files": []
     }
 ];
 

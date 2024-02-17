@@ -11,8 +11,7 @@ def create_folder_structure(path):
                 "folders": create_folder_structure(entry.path)
             }
             files = [f.name for f in os.scandir(entry.path) if f.is_file()]
-            if files:
-                folder["files"] = files
+            folder["files"] = files
             folder_structure.append(folder)
     return folder_structure
 
